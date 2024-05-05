@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c9c10178-ddb3-4185-978a-acf83f3e9552" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-j-8.3.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/Controller/whatev.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/EvolutionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/ItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/img/banana.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/img/cherry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/img/coconut.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/img/grapes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/img/ic_cart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/img/ic_delivery.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/img/ic_stopwatch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/img/kiwi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/img/mango.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/img/orange.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/img/peach.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/img/strawberry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/img/watermelon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/main/MyListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/main/Wtf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/models/Pokemon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/evolution.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/home-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/025.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/50800.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/banana.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/cherry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/coconut.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/grapes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/ic_cart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/ic_delivery.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/ic_stopwatch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/kiwi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/mango.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/orange.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/peach.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/raw.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/strawberry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/img/watermelon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/item.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/style.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2fyvUxg54CMAESFiDnqRnVb72ra" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HelloApplication.executor": "Run",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/abuba/IdeaProjects/pokedex/src/main/resources/org/unknown/pokedex/img",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\abuba\IdeaProjects\pokedex\src\main\resources\org\unknown\pokedex\img" />
+      <recent name="C:\Users\abuba\IdeaProjects\pokedex\lib" />
+      <recent name="C:\Users\abuba\IdeaProjects\pokedex\src\main\java\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\abuba\IdeaProjects\pokedex\src\main\resources\org\unknown\pokedex" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.unknown.pokedex" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c9c10178-ddb3-4185-978a-acf83f3e9552" name="Changes" comment="" />
+      <created>1714786153130</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714786153130</updated>
+    </task>
+    <servers />
+  </component>
+</project>

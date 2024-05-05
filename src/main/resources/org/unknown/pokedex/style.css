@@ -1,0 +1,86 @@
+.search-box {
+  -fx-background-color: #ffffff;
+  -fx-background-radius: 100;
+}
+.transparent {
+  -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+.search-button {
+  -fx-background-color: #828282;
+  -fx-background-radius: 30;
+}
+
+.evolution-button {
+  position: relative;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  padding: 20px 50px;
+  border-radius: 50px;
+  font-weight: bold;
+  background-size: 100px;
+  -fx-background-image: conic-gradiant(
+    #fd004c,
+    #fe9000,
+    #fff020,
+    #3edf4b,
+    #3363ff,
+    #b102b7,
+    #fd004c
+  );
+  overflow: hidden;
+  transform: translateY(-50%) rotate(0);
+}
+
+.left-bar {
+  -fx-background-color: #d3d3d3;
+}
+
+.shadow {
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 10);
+}
+
+.chosen-fruit-card {
+  -fx-background-color: #ffffff;
+  -fx-background-radius: 20;
+  -fx-border-color: #242121;
+  -fx-border-radius: 18;
+  -fx-border-width: 10px;
+  /* -fx-padding: 20px; */
+}
+
+.chosen-fruit-card-details {
+  -fx-background-color: #efe8e8;
+  -fx-background-radius: 0 0 20 20;
+}
+
+.number {
+  /* -fx-background-color: #2a2d1e;
+  -fx-background-radius: 40; */
+}
+
+.typeLabel {
+  -fx-background-radius: 20;
+  -fx-background-color: #2a2d1e;
+}
+
+.properties {
+  -fx-background-radius: 5;
+  -fx-background-color: #ffffff;
+}
+
+.comboBox {
+  -fx-background-color: rgba(255, 255, 255, 0.3);
+  -fx-background-radius: 30;
+}
+
+.add-btn {
+  -fx-background-color: #ffffff;
+  -fx-background-radius: 100;
+}
+
+.fruit-item {
+  -fx-background-color: #ffffff;
+  -fx-background-radius: 30;
+}
