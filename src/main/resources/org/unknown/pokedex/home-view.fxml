@@ -29,12 +29,12 @@
                         <Insets left="30.0" right="30.0" />
                      </VBox.margin>
                      <children>
-                        <TextField prefHeight="40.0" prefWidth="225.0" promptText="Type here to search" styleClass="transparent" stylesheets="@style.css">
+                        <TextField fx:id="searchBar" prefHeight="40.0" prefWidth="225.0" promptText="Type here to search" styleClass="transparent" stylesheets="@style.css">
                            <font>
                               <Font name="Graphik-Light" size="18.0" />
                            </font>
                         </TextField>
-                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="117.0" styleClass="search-button" stylesheets="@style.css" text="Search" textFill="WHITE">
+                        <Button fx:id="searchBtn" mnemonicParsing="false" onAction="#Search" prefHeight="37.0" prefWidth="117.0" styleClass="search-button" stylesheets="@style.css" text="Search" textFill="WHITE">
                            <font>
                               <Font name="Graphik-Regular" size="24.0" />
                            </font></Button>
@@ -64,12 +64,15 @@
                               <Insets bottom="-40.0" />
                            </VBox.margin>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="240.0" prefWidth="375.0">
+                        <HBox fx:id="pokeBg" alignment="CENTER" prefHeight="267.0" prefWidth="426.0">
                            <children>
-                              <ImageView fx:id="pokeImg" fitHeight="241.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="pokeImg" fitHeight="306.0" fitWidth="319.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@img/025.png" />
                                  </image>
+                                 <HBox.margin>
+                                    <Insets top="12.0" />
+                                 </HBox.margin>
                               </ImageView>
                            </children>
                         </HBox>
@@ -185,7 +188,7 @@
                               </HBox>
                               <HBox prefHeight="22.0" prefWidth="315.0">
                                  <children>
-                                    <Label prefHeight="22.0" prefWidth="56.0" text="Strength">
+                                    <Label prefHeight="22.0" prefWidth="56.0" text="Hp">
                                        <font>
                                           <Font name="Graphik-Semibold" size="12.0" />
                                        </font>
@@ -193,18 +196,21 @@
                                           <Insets left="12.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <HBox prefHeight="22.0" prefWidth="272.0" styleClass="properties" stylesheets="@style.css">
+                                    <HBox fx:id="hpBar" prefHeight="22.0" prefWidth="272.0" styleClass="properties" stylesheets="@style.css">
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                        <children>
-                                          <Label fx:id="pokeStrength" prefHeight="22.0" prefWidth="282.0" text="Static">
+                                          <Label fx:id="hpLabel" alignment="CENTER_RIGHT" prefHeight="22.0" prefWidth="281.0" text="Static">
                                              <HBox.margin>
                                                 <Insets left="5.0" />
                                              </HBox.margin>
                                              <font>
                                                 <Font name="Graphik-Bold" size="12.0" />
                                              </font>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
                                           </Label>
                                        </children>
                                     </HBox>
@@ -218,7 +224,7 @@
                               </HBox>
                               <HBox prefHeight="22.0" prefWidth="315.0">
                                  <children>
-                                    <Label prefHeight="22.0" prefWidth="63.0" text="Weakness">
+                                    <Label prefHeight="22.0" prefWidth="56.0" text="Speed">
                                        <font>
                                           <Font name="Graphik-Semibold" size="12.0" />
                                        </font>
@@ -226,18 +232,93 @@
                                           <Insets left="12.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <HBox prefHeight="22.0" prefWidth="267.0" styleClass="properties" stylesheets="@style.css">
+                                    <HBox fx:id="speedBar" prefHeight="22.0" prefWidth="272.0" styleClass="properties" stylesheets="@style.css">
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                        <children>
-                                          <Label fx:id="pokeWeakness" prefHeight="22.0" prefWidth="258.0" text="Grass">
+                                          <Label fx:id="speedLabel" alignment="CENTER_RIGHT" prefHeight="22.0" prefWidth="365.0" text="Static">
                                              <HBox.margin>
                                                 <Insets left="5.0" />
                                              </HBox.margin>
                                              <font>
                                                 <Font name="Graphik-Bold" size="12.0" />
                                              </font>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets right="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets left="15.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="22.0" prefWidth="315.0">
+                                 <children>
+                                    <Label prefHeight="22.0" prefWidth="56.0" text="Attack">
+                                       <font>
+                                          <Font name="Graphik-Semibold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="12.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <HBox fx:id="attackBar" prefHeight="22.0" prefWidth="272.0" styleClass="properties" stylesheets="@style.css">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <Label fx:id="attackLabel" alignment="CENTER_RIGHT" prefHeight="22.0" prefWidth="296.0" text="Static">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="Graphik-Bold" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets right="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets left="15.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="22.0" prefWidth="315.0">
+                                 <children>
+                                    <Label prefHeight="22.0" prefWidth="56.0" text="Defence">
+                                       <font>
+                                          <Font name="Graphik-Semibold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="12.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <HBox fx:id="defenceBar" prefHeight="22.0" prefWidth="272.0" styleClass="properties" stylesheets="@style.css">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <Label fx:id="defenceLabel" alignment="CENTER_RIGHT" prefHeight="22.0" prefWidth="277.0" text="Static">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="Graphik-Bold" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
                                           </Label>
                                        </children>
                                     </HBox>

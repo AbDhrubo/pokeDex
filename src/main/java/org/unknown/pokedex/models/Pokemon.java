@@ -1,41 +1,56 @@
 package org.unknown.pokedex.models;
 
-import javafx.scene.image.Image;
-
-import java.util.ArrayList;
-
 public class Pokemon {
-    private String name;
-    private String imgSrc;
     private int number;
-    private String color;
+    private String name;
+    private String type1;
+    private String type2;
+    private int total;
+    private int hp;
+    private int attack;
+    private int defence;
+    private int speed;
 
-    private String desc;
-    private String category;
+    private int generation;
+    private Boolean legendary;
+    private String imgSrc;
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    private String type;
-
-    private double weight;
+    private float height;
+    private float weight;
 
     private int evolution;
+    private String desc;
 
-    public Image getImg() {
-        return img;
+    private String classification;
+
+    public String getImgSrc() {
+        return imgSrc;
     }
 
-    public void setImg(Image img) {
-        this.img = img;
+//    public Pokemon(int number, String name, String type1, String type2, int total, int hp, int attack, int defence, int speed, int generation, Boolean legendary) {
+//        this.number = number;
+//        this.name = name;
+//        this.type1 = type1;
+//        this.type2 = type2;
+//        this.total = total;
+//        this.hp = hp;
+//        this.attack = attack;
+//        this.defence = defence;
+//        this.speed = speed;
+//        this.generation = generation;
+//        this.legendary = legendary;
+//        this.imgSrc = "img/images/" + String.format("%03d", this.number) + ".png";
+//    }
+
+    public int getNumber() {
+        return number;
     }
 
-    private Image img;
+    public void setNumber(int number) {
+        this.number = number;
+        this.imgSrc = "img/images/" + String.format("%03d", this.number) + ".png";
+        System.out.println(this.imgSrc);
+    }
 
     public String getName() {
         return name;
@@ -45,28 +60,100 @@ public class Pokemon {
         this.name = name;
     }
 
-    public String getImgSrc() {
-        return imgSrc;
+    public String getType1() {
+        return type1;
     }
 
-    public void setImgSrc(String imgSrc) {
-        this.imgSrc = imgSrc;
+    public void setType1(String type1) {
+        this.type1 = type1;
     }
 
-    public int getNumber() {
-        return number;
+    public String getType2() {
+        return type2;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setType2(String type2) {
+        this.type2 = type2;
     }
 
-    public String getColor() {
-        return color;
+    public int getTotal() {
+        return total;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public int getDefence() {
+        return defence;
+    }
+
+    public void setDefence(int defence) {
+        this.defence = defence;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getGeneration() {
+        return generation;
+    }
+
+    public void setGeneration(int generation) {
+        this.generation = generation;
+    }
+
+    public Boolean getLegendary() {
+        return legendary;
+    }
+
+    public void setLegendary(Boolean legendary) {
+        this.legendary = legendary;
+    }
+
+    public float getHeight() {
+        return height;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    public int getEvolution() {
+        return evolution;
+    }
+
+    public void setEvolution(int evolution) {
+        this.evolution = evolution;
     }
 
     public String getDesc() {
@@ -77,55 +164,11 @@ public class Pokemon {
         this.desc = desc;
     }
 
-    public String getCategory() {
-        return category;
+    public String getClassification() {
+        return classification;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public String getStrength() {
-        return strength;
-    }
-
-    public void setStrength(String strength) {
-        this.strength = strength;
-    }
-
-    public String getWeakness() {
-        return weakness;
-    }
-
-    public void setWeakness(String weakness) {
-        this.weakness = weakness;
-    }
-
-    private double height;
-    private String strength;
-    private String weakness;
-
-    public int getEvolution(){
-        return evolution;
-    }
-
-    public void setEvolution(int evolution){
-        this.evolution = evolution;
+    public void setClassification(String classification) {
+        this.classification = classification;
     }
 }

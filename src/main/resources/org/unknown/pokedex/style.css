@@ -20,7 +20,7 @@
   border-radius: 50px;
   font-weight: bold;
   background-size: 100px;
-  -fx-background-image: conic-gradiant(
+  /*-fx-background-image: conic-gradiant(
     #fd004c,
     #fe9000,
     #fff020,
@@ -28,7 +28,7 @@
     #3363ff,
     #b102b7,
     #fd004c
-  );
+  );*/
   overflow: hidden;
   transform: translateY(-50%) rotate(0);
 }
