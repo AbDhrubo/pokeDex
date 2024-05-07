@@ -16,7 +16,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
 //        Connection con = DriverManager
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("home-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         stage.setTitle("PokéDex");
         stage.setScene(scene);
         stage.show();

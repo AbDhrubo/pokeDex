@@ -111,7 +111,7 @@ public class MainController implements Initializable {
         Pokemon pokemon;
 
         Connection connection = DriverManager.getConnection(
-                "jdbc:mysql://127.0.0.1:3306/pokeschema",
+                "jdbc:mysql://127.0.0.1:3306/poke_schema",
                 "dhrubo",
                 "changeme"
         );
@@ -183,8 +183,10 @@ public class MainController implements Initializable {
     public void Search() throws SQLException {
         String keyword = searchBar.getText();
 //        page_info = "Search";
-        if (Objects.equals(keyword, "")) return;
-        List<Pokemon> pokemons_search = new ArrayList<>(getData("SELECT * FROM POKEMON WHERE NAME LIKE ? OR TYPE1 LIKE ? OR TYPE2 LIKE ?"));
+        if (Objects.equals(keyword, "")) {
+            return;
+        }
+        List<Pokemon> pokemons_search = new ArrayList<>(getData("SELECT * FROM POKEMON_LATEST WHERE NAME LIKE '%" + keyword + "%' OR TYPE1 LIKE '%" + keyword + "%' OR TYPE2 LIKE '%" + keyword + "%'"));
         if (pokemons_search.isEmpty()) return;
         grid.getChildren().clear();
         int column = 0;
@@ -193,7 +195,7 @@ public class MainController implements Initializable {
         try {
             for (int i = 0; i < pokemons_search.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("pokemonCard.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("item.fxml"));
                 AnchorPane anchorpane = fxmlLoader.load();
                 ItemController itemcontroller = fxmlLoader.getController();
                 itemcontroller.setData(pokemons_search.get(i), myListener);
