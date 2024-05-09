@@ -49,7 +49,7 @@ public class Pokemon {
     public void setNumber(int number) {
         this.number = number;
         this.imgSrc = "img/images/" + String.format("%03d", this.number) + ".png";
-        System.out.println(this.imgSrc);
+//        System.out.println(this.imgSrc);
     }
 
     public String getName() {

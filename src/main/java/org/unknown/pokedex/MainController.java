@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -13,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import org.unknown.pokedex.main.MyListener;
 import org.unknown.pokedex.models.Pokemon;
 
@@ -101,7 +104,7 @@ public class MainController implements Initializable {
 
 
     public Map<String, String> color_map = new HashMap<>();
-
+    private int pokeEvo;
 
     private List<Pokemon> pokemons = new ArrayList<>();
     private MyListener myListener;
@@ -208,6 +211,7 @@ public class MainController implements Initializable {
         pokeName.setText(pokemon.getName());
         pokeNumber.setText("#"+pokemon.getNumber());
         pokeType.setText(pokemon.getType1());
+        pokeEvo = pokemon.getEvolution();
         pokeCategory.setText(pokemon.getClassification() + " Pokemon");
         hpBar.setPrefSize(272, 22);
         speedBar.setPrefSize(272, 22);
@@ -250,6 +254,77 @@ public class MainController implements Initializable {
         color_map.put("dark", "#705746");
         color_map.put("steel", "#B7B7CE");
         color_map.put("fairy", "#D685AD");
+    }
+
+    public void evolutionClicked() throws IOException, SQLException {
+        System.out.println("pressed");
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("evolution.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        ArrayList <Pokemon> pokemons = new ArrayList<>();
+
+        String query = "SELECT * FROM POKE_EVOLUTION WHERE ID=" +pokeEvo;
+        Connection connection = DriverManager.getConnection(
+                "jdbc:mysql://127.0.0.1:3306/poke_schema",
+                "dhrubo",
+                "changeme"
+        );
+
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+
+        int [] pokeId = {0,0,0};
+//        System.out.println("poke_"+ (i+1));
+//        resultSet.beforeFirst();
+        while(resultSet.next()) {
+            pokeId[0] = resultSet.getInt("poke_" + 1);
+            pokeId[1] = resultSet.getInt("poke_" + 2);
+            pokeId[2] = resultSet.getInt("poke_" + 3);
+        }
+
+        for(int i = 0; i<3; i++) {
+            if (pokeId[i] != 0){
+                query = "SELECT * FROM POKEMON_LATEST WHERE POKEDEX_NUMBER=" +pokeId[i];
+                statement = connection.createStatement();
+                ResultSet resultSet2 = statement.executeQuery(query);
+                Pokemon pokemon;
+
+                while (resultSet2.next()){
+                    System.out.println(resultSet2.getString("name"));
+                    System.out.println(resultSet2.getString("pokedex_number"));
+                    pokemon = new Pokemon();
+                    pokemon.setName(resultSet2.getString("name"));
+                    pokemon.setClassification(resultSet2.getString("classfication"));
+                    pokemon.setNumber(resultSet2.getInt("pokedex_number"));
+                    System.out.println(pokemon.getImgSrc());
+                    pokemon.setType1(resultSet2.getString("type1"));
+                    pokemon.setType2(resultSet2.getString("type2"));
+                    pokemon.setHp(resultSet2.getInt("hp"));
+                    pokemon.setAttack(resultSet2.getInt("attack"));
+                    pokemon.setDefence(resultSet2.getInt("defense"));
+                    pokemon.setSpeed(resultSet2.getInt("speed"));
+                    pokemon.setGeneration(resultSet2.getInt("generation"));
+                    pokemon.setLegendary(resultSet2.getBoolean("is_legendary"));
+                    pokemon.setHeight(resultSet2.getFloat("height_m"));
+                    pokemon.setWeight(resultSet2.getFloat("weight_kg"));
+                    pokemon.setEvolution(resultSet2.getInt("evolution"));
+//            pokemon.setDesc(resultSet.getString("desc"));
+                    pokemons.add(pokemon);
+                }
+            }
+            
+
+        }
+
+//        root.setStyle("-fx-background-color: " + color_map.get(pokemon.type1) + ";");
+        EvolutionController evolutionController = fxmlLoader.getController();
+        evolutionController.init(pokemons, color_map);
+//        scene.getStylesheets().add(cssFile);
+
+        Stage stage = new Stage();
+        stage.setTitle("Pokedex");
+        stage.setScene(scene);
+        stage.show();
     }
 
 

@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9c10178-ddb3-4185-978a-acf83f3e9552" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/.idea/libraries/mysql_connector_j_8_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/EvolutionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/EvolutionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/models/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/unknown/pokedex/models/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/evolution.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/evolution.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/home-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/unknown/pokedex/item.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,23 +45,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/projects/2024/may/pokeDex/lib/mysql-connector-j-8.3.0.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HelloApplication.executor": "Run",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/projects/2024/may/samples/hasib-pokedex",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\abuba\IdeaProjects\pokedex\src\main\resources\org\unknown\pokedex\csv_data" />
