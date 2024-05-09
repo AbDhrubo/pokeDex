@@ -100,7 +100,7 @@ public class MainController implements Initializable {
 
 
 
-    private Map<String, String> color_map = new HashMap<>();
+    public Map<String, String> color_map = new HashMap<>();
 
 
     private List<Pokemon> pokemons = new ArrayList<>();
@@ -141,53 +141,30 @@ public class MainController implements Initializable {
 //            pokemon.setDesc(resultSet.getString("desc"));
             pokemons.add(pokemon);
         }
-//        for(int i = 0; i < 20; i++){
-//            pokemon = new Pokemon();
-//            pokemon.setName("Balbasaur");
-//            pokemon.setImgSrc("img/001.png");
-//            pokemon.setColor("6A7324");
-//            pokemon.setCategory("Seed");
-//            pokemon.setType("Grass");
-//            pokemon.setHeight(0.7);
-//            pokemon.setWeight(6.9);
-//            pokemon.setNumber(1);
-//            pokemon.setEvolution(2);
-//            pokemon.setDesc("Bulbasaur is a Grass/Poison type Pokémon introduced in Generation 1.\n" +
-//                    "\n" +
-//                    "Bulbasaur is a small, mainly turquoise amphibian Pokémon with red eyes and a green bulb on its back. It is based on a frog/toad, with the bulb resembling a plant bulb that grows into a flower as it evolves.\n" +
-//                    "\n" +
-//                    "Bulbasaur is notable for being the very first Pokémon in the National Pokédex. It is one of the three choices for a starter Pokémon in the original Game Boy games, Pokémon Red & Blue (Red & Green in Japan), along with Charmander and Squirtle.");
-//            pokemons.add(pokemon);
-//        }
-
-//        for(int i = 0; i < 20; i++){
-//            pokemon = new Pokemon();
-//            pokemon.setName("Pikachu");
-//            pokemon.setImgSrc("img/025.png");
-//            pokemon.setColor("6A7324");
-//            pokemon.setCategory("Mouse");
-//            pokemon.setType("Electric");
-//            pokemon.setHeight(0.4);
-//            pokemon.setWeight(6.0);
-//            pokemon.setNumber(25);
-//            pokemon.setEvolution(26);
-//            pokemon.setDesc("Pikachu is an Electric type Pokémon introduced in Generation 1.\n" +
-//                    "\n" +
-//                    "Pikachu has a Gigantamax form available in Pokémon Sword/Shield, with an exclusive G-Max move, G-Max Volt Crash.");
-//            pokemons.add(pokemon);
-//        }
 
         return pokemons;
     }
 
     public void Search() throws SQLException {
         String keyword = searchBar.getText();
+        List<Pokemon> pokemons_search;
 //        page_info = "Search";
         if (Objects.equals(keyword, "")) {
-            return;
+             pokemons_search = new ArrayList<>(getData("SELECT * FROM POKEMON_LATEST LIMIT 50"));
         }
-        List<Pokemon> pokemons_search = new ArrayList<>(getData("SELECT * FROM POKEMON_LATEST WHERE NAME LIKE '%" + keyword + "%' OR TYPE1 LIKE '%" + keyword + "%' OR TYPE2 LIKE '%" + keyword + "%'"));
-        if (pokemons_search.isEmpty()) return;
+        else{
+            keyword = Character.toUpperCase(keyword.charAt(0)) + keyword.substring(1);
+            pokemons_search = new ArrayList<>(getData("SELECT * FROM POKEMON_LATEST WHERE NAME LIKE '%" + keyword + "%' OR TYPE1 LIKE '%" + keyword + "%' OR TYPE2 LIKE '%" + keyword + "%' LIMIT 50"));
+        }
+        if(!pokemons_search.isEmpty()){
+            setChosenPokemon(pokemons_search.getFirst());
+            myListener = new MyListener() {
+                @Override
+                public void onClickListener(Pokemon pokemon) {
+                    setChosenPokemon(pokemon);
+                }
+            };
+        }
         grid.getChildren().clear();
         int column = 0;
         int row = 1;
@@ -198,13 +175,22 @@ public class MainController implements Initializable {
                 fxmlLoader.setLocation(getClass().getResource("item.fxml"));
                 AnchorPane anchorpane = fxmlLoader.load();
                 ItemController itemcontroller = fxmlLoader.getController();
-                itemcontroller.setData(pokemons_search.get(i), myListener);
+                itemcontroller.setData(pokemons_search.get(i), myListener, color_map);
                 if (column == 3) {
                     column = 0;
                     row++;
                 }
 //                anchorpane.setStyle("-fx-background-color: " + color_map.get(pokemons_search.get(i).type1) + ";");
                 grid.add(anchorpane, column++, row);
+                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+                grid.setPrefWidth(Region.USE_COMPUTED_SIZE);
+                grid.setMaxWidth(Region.USE_PREF_SIZE);
+
+                //set grid height
+                grid.setMinHeight(Region.USE_COMPUTED_SIZE);
+                grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                grid.setMaxHeight(Region.USE_PREF_SIZE);
+
                 GridPane.setMargin(anchorpane, new Insets(10));
 
             }
@@ -240,24 +226,9 @@ public class MainController implements Initializable {
         DecimalFormat df = new DecimalFormat("#.##");
         pokeWeight.setText(df.format(pokemon.getWeight()) + " kgs");
         pokeHeight.setText(df.format(pokemon.getHeight()) + "m");
-//        descriptionLabel.setText(pokemon.getDesc());
-//        pokeStrength.setText(pokemon.getStrength());
-//        pokeWeakness.setText(pokemon.getWeakness());
 
         Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(pokemon.getImgSrc())));
         pokeImg.setImage(image);
-
-//        String totalStrength = "";
-//        for (String strength: pokemon.getStrength()){
-//            totalStrength += (" "+strength);
-//        }
-//        pokeStrength.setText(totalStrength);
-//
-//        String totalWeakness = "";
-//        for (String weakness: pokemon.getWeakness()){
-//            totalWeakness += (" "+weakness);
-//        }
-//        pokeWeakness.setText(totalWeakness);
     }
 
     public void initColor() {
@@ -288,51 +259,10 @@ public class MainController implements Initializable {
         int column = 0;
         int row = 1;
         initColor();
-
         try {
-            pokemons.addAll(getData("SELECT * FROM POKEMON_LATEST LIMIT 50"));
+            Search();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
-        if(!pokemons.isEmpty()){
-            setChosenPokemon(pokemons.getFirst());
-            myListener = new MyListener() {
-                @Override
-                public void onClickListener(Pokemon pokemon) {
-                    setChosenPokemon(pokemon);
-                }
-            };
-        }
-        for (Pokemon pokemon : pokemons) {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("item.fxml"));
-            AnchorPane anchorPane = null;
-            try {
-                anchorPane = fxmlLoader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            ItemController itemController = fxmlLoader.getController();
-            if (itemController != null) {
-                itemController.setData(pokemon, myListener);
-
-                if (column == 3) {
-                    column = 0;
-                    row++;
-                }
-            } else System.out.println("controller was not found");
-            grid.add(anchorPane, column++, row);
-            grid.setMinWidth(Region.USE_COMPUTED_SIZE);
-            grid.setPrefWidth(Region.USE_COMPUTED_SIZE);
-            grid.setMaxWidth(Region.USE_PREF_SIZE);
-
-            //set grid height
-            grid.setMinHeight(Region.USE_COMPUTED_SIZE);
-            grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
-            grid.setMaxHeight(Region.USE_PREF_SIZE);
-
-            GridPane.setMargin(anchorPane, new Insets(10));
         }
     }
 }
