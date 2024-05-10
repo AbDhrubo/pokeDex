@@ -109,6 +109,8 @@ public class MainController implements Initializable {
     private List<Pokemon> pokemons = new ArrayList<>();
     private MyListener myListener;
 
+    private String currDesc;
+
     private List<Pokemon> getData(String query) throws SQLException {
         List<Pokemon> pokemons = new ArrayList<>();
         Pokemon pokemon;
@@ -141,7 +143,7 @@ public class MainController implements Initializable {
             pokemon.setHeight(resultSet.getFloat("height_m"));
             pokemon.setWeight(resultSet.getFloat("weight_kg"));
             pokemon.setEvolution(resultSet.getInt("evolution"));
-//            pokemon.setDesc(resultSet.getString("desc"));
+            pokemon.setDesc(resultSet.getString("desc"));
             pokemons.add(pokemon);
         }
 
@@ -213,10 +215,11 @@ public class MainController implements Initializable {
         pokeType.setText(pokemon.getType1());
         pokeEvo = pokemon.getEvolution();
         pokeCategory.setText(pokemon.getClassification() + " Pokemon");
-        hpBar.setPrefSize(272, 22);
-        speedBar.setPrefSize(272, 22);
-        attackBar.setPrefSize(272, 22);
-        defenceBar.setPrefSize(272, 22);
+        hpBar.setPrefSize(240, 22);
+        speedBar.setPrefSize(240, 22);
+        attackBar.setPrefSize(240, 22);
+        defenceBar.setPrefSize(240, 22);
+        currDesc = pokemon.getDesc();
         hpBar.setPrefSize(hpBar.getPrefWidth()* (0.05 + ((double) pokemon.getHp() /350.0)), hpBar.getPrefHeight());
         hpLabel.setText(pokemon.getHp() + " ");
         speedBar.setPrefSize(speedBar.getPrefWidth()* (0.1 + ((double) pokemon.getSpeed() /350.0)), speedBar.getPrefHeight());
@@ -257,7 +260,7 @@ public class MainController implements Initializable {
     }
 
     public void evolutionClicked() throws IOException, SQLException {
-        System.out.println("pressed");
+//        System.out.println("pressed");
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("evolution.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
@@ -322,7 +325,19 @@ public class MainController implements Initializable {
 //        scene.getStylesheets().add(cssFile);
 
         Stage stage = new Stage();
-        stage.setTitle("Pokedex");
+        stage.setTitle("Evolution");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void detailsClicked() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("details.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        DetailsController evolutionController = fxmlLoader.getController();
+        evolutionController.init(currDesc);
+        Stage stage = new Stage();
+        stage.setTitle("Description");
         stage.setScene(scene);
         stage.show();
     }

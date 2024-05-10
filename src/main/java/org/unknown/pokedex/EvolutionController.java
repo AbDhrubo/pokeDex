@@ -30,16 +30,21 @@ public class EvolutionController implements Initializable {
         try {
             for (int i = 0; i < pokemons_search.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
+                FXMLLoader fxmlLoader2 = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("item.fxml"));
+                fxmlLoader2.setLocation(getClass().getResource("arrow.fxml"));
                 AnchorPane anchorpane = fxmlLoader.load();
+                AnchorPane anchorPane2 = fxmlLoader2.load();
                 ItemController itemcontroller = fxmlLoader.getController();
                 itemcontroller.setData(pokemons_search.get(i), myListener, color_map);
-                if (column == 3) {
-                    column = 0;
-                    row++;
-                }
+//                if (column == 3) {
+//                    column = 0;
+//                    row++;
+//                }
 //                anchorpane.setStyle("-fx-background-color: " + color_map.get(pokemons_search.get(i).type1) + ";");
+                if (i != 0) grid.add(anchorPane2, column++, row);
                 grid.add(anchorpane, column++, row);
+                // add arrow here
                 grid.setMinWidth(Region.USE_COMPUTED_SIZE);
                 grid.setPrefWidth(Region.USE_COMPUTED_SIZE);
                 grid.setMaxWidth(Region.USE_PREF_SIZE);

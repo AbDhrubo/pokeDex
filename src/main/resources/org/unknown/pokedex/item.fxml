@@ -13,16 +13,21 @@
    <children>
       <VBox fx:id="cardBg" alignment="CENTER" layoutX="63.0" layoutY="8.0" onMousePressed="#click" prefHeight="200.0" prefWidth="100.0" styleClass="fruit-item" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
+            <ImageView fx:id="img" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../java/org/unknown/pokedex/img/cherry.png" />
+               </image>
+            </ImageView>
             <HBox prefHeight="38.0" prefWidth="225.0">
                <children>
-                  <Label fx:id="nameLabel" prefHeight="39.0" prefWidth="137.0" text="Cherry">
+                  <Label fx:id="nameLabel" prefHeight="38.0" prefWidth="133.0" text="Cherry">
                      <font>
-                        <Font name="Cambria" size="20.0" />
+                        <Font name="DejaVu Sans Mono" size="20.0" />
                      </font>
                   </Label>
-                  <Label fx:id="priceLabel" prefHeight="39.0" prefWidth="100.0" text="\$12">
+                  <Label fx:id="priceLabel" alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="50.0" text="\$12">
                      <font>
-                        <Font name="Cambria Bold" size="18.0" />
+                        <Font name="Courier New Bold" size="20.0" />
                      </font>
                   </Label>
                </children>
@@ -30,11 +35,6 @@
                   <Insets left="20.0" right="20.0" />
                </VBox.margin>
             </HBox>
-            <ImageView fx:id="img" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../java/org/unknown/pokedex/img/cherry.png" />
-               </image>
-            </ImageView>
          </children>
       </VBox>
    </children>

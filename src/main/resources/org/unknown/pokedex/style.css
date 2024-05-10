@@ -1,40 +1,38 @@
 .search-box {
-  -fx-background-color: #ffffff;
-  -fx-background-radius: 100;
+  -fx-background-color: #000000;
+  -fx-background-radius: 12;
 }
 .transparent {
   -fx-background-color: rgba(0, 0, 0, 0);
+  -fx-text-fill: #ffffff;
+  -fx-font-family: "Courier New"; /* Font family */
 }
 
 .search-button {
-  -fx-background-color: #828282;
-  -fx-background-radius: 30;
+  -fx-background-color: #655151dc;
+  -fx-background-radius: 5;
 }
 
 .evolution-button {
-  position: relative;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  padding: 20px 50px;
-  border-radius: 50px;
-  font-weight: bold;
-  background-size: 100px;
-  /*-fx-background-image: conic-gradiant(
-    #fd004c,
-    #fe9000,
-    #fff020,
-    #3edf4b,
-    #3363ff,
-    #b102b7,
-    #fd004c
-  );*/
-  overflow: hidden;
-  transform: translateY(-50%) rotate(0);
+  -fx-background-color:
+      linear-gradient(to right, 
+          red 0%,     /* Red */
+          orange 16.67%, /* Orange */
+          yellow 33.33%, /* Yellow */
+          green 50%,  /* Green */
+          blue 66.67%, /* Blue */
+          indigo 83.33%, /* Indigo */
+          violet 100%  /* Violet */
+      );
+  -fx-background-radius: 5;
 }
 
 .left-bar {
-  -fx-background-color: #d3d3d3;
+  -fx-background-color: #3e3535;
+}
+
+.right-bar{
+  -fx-background-color: #EBFBA9;
 }
 
 .shadow {
@@ -43,16 +41,16 @@
 
 .chosen-fruit-card {
   -fx-background-color: #ffffff;
-  -fx-background-radius: 20;
+  -fx-background-radius: 30;
   -fx-border-color: #242121;
-  -fx-border-radius: 18;
+  -fx-border-radius: 20;
   -fx-border-width: 10px;
   /* -fx-padding: 20px; */
 }
 
 .chosen-fruit-card-details {
   -fx-background-color: #efe8e8;
-  -fx-background-radius: 0 0 20 20;
+  -fx-background-radius: 0 0 12 12;
 }
 
 .number {
@@ -82,5 +80,5 @@
 
 .fruit-item {
   -fx-background-color: #ffffff;
-  -fx-background-radius: 30;
+  -fx-background-radius: 10;
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxWidth="-Infinity" prefHeight="410.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.unknown.pokedex.DetailsController">
+   <children>
+      <ImageView fitHeight="421.0" fitWidth="742.0" layoutX="-11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/images/bulbasaurBg.jpg" />
+         </image>
+      </ImageView>
+      <HBox layoutY="-2.0" maxWidth="-Infinity" prefHeight="423.0" prefWidth="726.0">
+         <children>
+            <VBox maxWidth="-Infinity" prefHeight="350.0" prefWidth="330.0">
+               <padding>
+                  <Insets left="20.0" top="30.0" />
+               </padding>
+               <children>
+                  <Text fx:id="details" strokeType="OUTSIDE" strokeWidth="0.0" text="Bulbasaur is a Grass/Poison type Pokémon introduced in Generation 1.Bulbasaur is a small, mainly turquoise amphibian Pokémon with red eyes and a green bulb on its back. It is based on a frog/toad, with the bulb resembling a plant bulb that grows into a flower as it evolves.Bulbasaur is notable for being the very first Pokémon in the National Pokédex. It is one of the three choices for a starter Pokémon in the original Game Boy games, Pokémon Red &amp; Blue (Red &amp; Green in Japan), along with Charmander and Squirtle." wrappingWidth="269.4048767089844">
+                     <font>
+                        <Font name="Courier New" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox maxWidth="-Infinity" prefHeight="350.0" prefWidth="240.0" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
